@@ -4,8 +4,6 @@
 
 `country-capital-api` is a RESTful microservice built with Python and Flask. It provides an API endpoint that returns the country name when given a capital city. The service is designed for easy integration into other projects and is served using Uvicorn (ASGI server) for high performance.
 
----
-
 ## Features
 
 - **GET endpoint** to retrieve country by capital city.
@@ -13,26 +11,21 @@
 - **Easy integration**: Microservice endpoint available for organization-wide use.
 - **Extensible**: Easily add more cities/countries or endpoints.
 
----
-
 ## Microservice Endpoint
 
-```
+
 https://example.com/country-capital?city=<capital-city>
-```
 
-- Replace `<capital-city>` with the name of the capital you want to query.
+- Replace <capital-city> with the name of the capital you want to query.
 - Example:  
-  `https://example.com/country-capital?city=Paris`
-
----
+  https://example.com/country-capital?city=Paris
 
 ## API Reference
 
 ### `GET /country-capital`
 
 **Query Parameters:**
-- `city` (string, required): The name of the capital city.
+- city (string, required): The name of the capital city.
 
 **Response:**
 - `200 OK`  
@@ -57,54 +50,40 @@ https://example.com/country-capital?city=<capital-city>
 - Git
 - Internet connection (for dependency installation)
 
----
-
 ## Local Development Setup
 
 1. **Clone the repository**
-   ```bash
    git clone https://github.com/your-org/country-capital-api.git
    cd country-capital-api
-   ```
+   
 
 2. **Create and activate a virtual environment**
-   ```bash
    python -m venv venv
    # Windows:
    venv\Scripts\activate
-   # macOS/Linux:
-   source venv/bin/activate
-   ```
+  
 
 3. **Install dependencies**
-   ```bash
    pip install -r requirements.txt
-   ```
+   
 
 4. **Run the API locally**
-   ```bash
    uvicorn app:app --reload
-   ```
    The API will be available at `http://127.0.0.1:8000/`.
 
----
 
 ## Example Usage
 
 ### Using `curl`
-```bash
 curl "http://127.0.0.1:8000/country-capital?city=Berlin"
-```
 
 ### Using Python
-```python
 import requests
 
 response = requests.get("http://127.0.0.1:8000/country-capital", params={"city": "Berlin"})
 print(response.json())
-```
 
----
+
 
 ## Deployment
 
@@ -122,21 +101,14 @@ print(response.json())
 4. Push to the branch (`git push origin feature/my-feature`).
 5. Open a pull request.
 
----
 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
----
-
 ## Support & Contact
 
 For questions, issues, or feature requests, please open an issue on GitHub or contact the maintainer at [your-email@example.com].
-
----
-
-## Resources
 
 - [Git Documentation](https://git-scm.com/doc)
 -
