@@ -1,0 +1,42 @@
+# PR Title
+**feat/FEAPP-420: Enable Customer Notifications via WhatsApp**
+
+# PR Description
+
+## What’s New
+
+This pull request adds support for notifying customers about product listing updates through WhatsApp. The main changes are:
+
+### Frontend
+- Enhanced customer preferences UI with an optional WhatsApp number input field.
+- Added validation for WhatsApp numbers.
+- Updated form submission logic to send the WhatsApp number to the backend only if provided.
+
+### Backend
+- Extended the customer model to include an optional `whatsapp_number` field.
+- Integrated WhatsApp messaging using the Twilio API.
+
+### Other Updates
+- Updated environment configuration to include Twilio credentials (managed securely via `.env`).
+- Added a utility module for formatting and validating WhatsApp numbers.
+- Introduced the Twilio SDK as a new dependency.
+
+## Why This Change
+
+Customers have requested more convenient notification channels. While email remains the default, WhatsApp is preferred by many users for its accessibility and speed, especially internationally.
+
+This feature, requested in ticket **FEAPP-420**, supports our roadmap to improve customer communication flexibility. By making WhatsApp notifications optional, we aim to:
+- Increase user engagement
+- Reduce missed updates
+- Offer a more personalized experience
+
+## Notes
+
+- The WhatsApp number field is optional; existing users are unaffected if they do not provide it.
+- Please run `npm install` after pulling this branch to install the new Twilio SDK dependency.
+
+## Reviewers
+
+- @team-lead
+- @frontend-dev1
+- @qa
